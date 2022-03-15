@@ -35,6 +35,18 @@ N명의 학생들의 평균(소수 첫째자리 반올림)을 구하고, N명의
 
 74 7
 
+fix >
+
+round 함수는 round_half_even 방식이다.
+
+round_half_even 방식은 xx.5일 때, 짝수 쪽으로 가버린다.
+
+즉 65.5 는 66.0, 64.5는 64.0, 으로 간다.
+
+따라서 다음과 같이 수정한다.
+
+avg = int(sum(input_list) / len(input_list) + 0.5)
+
 '''
 
 import sys
@@ -47,7 +59,7 @@ def logic(input_file_path, output_file_path):
 
     input_list = list(map(int,input().split()))
 
-    avg = round(sum(input_list) / len(input_list))
+    avg = int(sum(input_list) / len(input_list) + 0.5)
 
     result_list = []
 
