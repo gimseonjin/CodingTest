@@ -42,13 +42,12 @@ Todo >
 
 3
 
-Fixme > 
-
 '''
 
 import sys
 
 def logic(input_file_path, output_file_path):
+    
     sys.stdin = open(input_file_path, "rt")
 
     k, n = map(int, input().split(" "))
