@@ -33,6 +33,12 @@ Todo >
 
 fix >
 
+output.txt 파일들의 encoding이 일치하지 않는다.
+
+1,2,5 = utf-8
+3,4 = utf-16
+
+3,4를 utf-8로 수정해야한다.
 
 '''
 
