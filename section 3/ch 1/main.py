@@ -53,15 +53,15 @@ def logic(input_file_path, output_file_path):
     for i in range(N):
         message = str(input()).lower()
 
-        result = "YES"
-        for i in range(len(message)):
-            if message[i] != message[len(message)-1 - i]:
-                result = "NO"
-                break
+        if message == message[::-1]:
+            result = "YES"
+        else:
+            result = "NO"
         
         result_list.append(result)
     
     sys.stdin = open(output_file_path, "rt")
+    
     for i in range(N):
         answer = input()
         result = f"#{i+1} {result_list[i]}"
