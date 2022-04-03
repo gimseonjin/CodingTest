@@ -46,6 +46,14 @@ Todo >
 
 import sys
 
+def check(input_list, tmp_list, N):
+    count = 0
+    for i in range(1, N+1):
+        for j in range(1, N+1):
+            if input_list[i][j] > input_list[i][j-1] and input_list[i][j] > input_list[i][j+1] and input_list[i][j] > input_list[i-1][j] and input_list[i][j] > input_list[i+1][j]:
+                count += 1
+    return count
+    
 def logic(input_file_path, output_file_path):
 
     sys.stdin = open(input_file_path, "rt")
@@ -63,14 +71,14 @@ def logic(input_file_path, output_file_path):
 
     tmp_list = [[0 for _ in range(N+2)] for _ in range(N+2)]
 
-    print(tmp_list)
-    print(input_list)
+    result = check(input_list, tmp_list, N)
+
     sys.stdin = open(output_file_path, "rt")
 
     answer = int(input())
 
-    #print(f"{input_file_path} : {result == answer}")
+    print(f"{input_file_path} : {result == answer}")
 
 if __name__ == "__main__":
-    for i in range(1, 2):
+    for i in range(1, 6):
         logic(f"in{i}.txt", f"out{i}.txt")
