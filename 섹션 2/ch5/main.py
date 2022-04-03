@@ -51,12 +51,15 @@ def logic(input_file_path, output_file_path):
             result_list[i+j] = result_list[i+j] + 1
 
     max_value = max(result_list)
+
     result = ""
+
     for i, v in enumerate(result_list):
         if v == max_value:
             result = result + str(i) + " "
 
     sys.stdin = open(output_file_path, "rt")
+    
     answer = input()
 
     print(f"{input_file_path} : {result[:-1] == answer}")

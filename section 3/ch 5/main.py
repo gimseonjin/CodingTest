@@ -49,9 +49,9 @@ def logic(input_file_path, output_file_path):
 
     for i in range(0, N):
         for j in range(i, N):
-            if M < sum(input_list[i:N-j]):
+            if M < sum(input_list[i:j+1]):
                 break
-            if M == sum(input_list[i:N-j]):
+            if M == sum(input_list[i:j+1]):
                 result += 1
                 break
 

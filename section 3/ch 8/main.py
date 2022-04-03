@@ -69,6 +69,15 @@ def logic(input_file_path, output_file_path):
 
     for order in order_list:
         if order[1] == 1:
+            for i in range(order[2]):
+                input_list[order[0]-1].insert(0, input_list[order[0]-1].pop())
+        else:
+            for i in range(order[2]):
+                input_list[order[0]-1].append(input_list[order[0]-1].pop(0))
+
+    '''
+    for order in order_list:
+        if order[1] == 1:
             tmp = [0 for i in range(N)]
             for i, v in enumerate(input_list[order[0]-1]):
                 tmp_i = i + order[2]
@@ -84,7 +93,7 @@ def logic(input_file_path, output_file_path):
                     tmp_i = tmp_i + N
                 tmp[tmp_i] = v
             input_list[order[0]-1] = tmp
-
+    '''
     half = int(N/2 + 0.5)
 
     result = 0
